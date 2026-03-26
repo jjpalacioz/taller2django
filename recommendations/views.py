@@ -58,6 +58,7 @@ def recommend(request):
         if prompt:
             try:
                 from dotenv import load_dotenv
+                from openai import OpenAI
 
                 load_dotenv('openAI.env')
                 api_key = os.environ.get('openai_apikey')
@@ -79,7 +80,6 @@ def recommend(request):
                     else:
                         error_message = "No se encontraron películas en la base de datos."
                 else:
-                    from openai import OpenAI
                     client = OpenAI(api_key=api_key)
 
                     # Generate embedding for the user prompt

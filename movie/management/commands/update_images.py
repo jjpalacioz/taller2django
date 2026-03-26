@@ -13,10 +13,15 @@ class Command(BaseCommand):
         # Load environment variables from the .env file
         load_dotenv('openAI.env')
 
+        api_key = os.environ.get('openai_apikey')
+        if not api_key:
+            self.stderr.write(self.style.ERROR(
+                "API key not configured. Please set openai_apikey in openAI.env file."
+            ))
+            return
+
         # Initialize the OpenAI client with the API key
-        client = OpenAI(
-            api_key=os.environ.get('openai_apikey'),
-        )
+        client = OpenAI(api_key=api_key)
 
         # Folder to save images
         images_folder = 'media/movie/images/'
