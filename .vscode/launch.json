@@ -1,0 +1,89 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 Django: Iniciar Servidor",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["runserver"],
+      "django": true,
+      "justMyCode": true,
+      "env": {
+        "DJANGO_SETTINGS_MODULE": "moviereviews.settings"
+      }
+    },
+    {
+      "name": "🗄️ Django: Aplicar Migraciones",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["migrate"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "🎬 Django: Cargar Películas (add_movies_db)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["add_movies_db"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "📝 Django: Actualizar Descripciones desde CSV",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["update_movies_from_csv"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "🤖 Django: Actualizar Descripción con OpenAI (1 película)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["update_descriptions"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "🖼️ Django: Generar Imagen con OpenAI (1 película)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["update_images"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "📁 Django: Cargar Imágenes desde Carpeta",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["update_images_from_folder"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "🔢 Django: Generar Embeddings de Películas",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["movie_embeddings"],
+      "django": true,
+      "justMyCode": true
+    },
+    {
+      "name": "📐 Django: Comparar Similitud entre Películas",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["movie_similarities"],
+      "django": true,
+      "justMyCode": true
+    }
+  ]
+}
