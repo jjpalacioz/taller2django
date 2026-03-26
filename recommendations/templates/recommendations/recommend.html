@@ -15,6 +15,12 @@
       </div>
     </form>
 
+    {% if used_fallback %}
+    <div class="alert alert-info" role="alert">
+      ℹ️ Modo de búsqueda por palabras clave activo (la clave de API de OpenAI no está configurada). Para mejores resultados configura <code>openai_apikey</code> en el archivo <code>openAI.env</code>.
+    </div>
+    {% endif %}
+
     {% if error_message %}
     <div class="alert alert-warning" role="alert">
       ⚠️ {{ error_message }}
