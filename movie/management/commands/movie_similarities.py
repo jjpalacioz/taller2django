@@ -12,7 +12,13 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         # Load OpenAI API key
         load_dotenv('openAI.env')
-        client = OpenAI(api_key=os.environ.get('openai_apikey'))
+        api_key = os.environ.get('openai_apikey')
+        if not api_key:
+            self.stderr.write(self.style.ERROR(
+                "API key not configured. Please set openai_apikey in openAI.env file."
+            ))
+            return
+        client = OpenAI(api_key=api_key)
 
         # Select two movies to compare
         try:
